@@ -7,7 +7,7 @@ speed = 5
 
 while True:
 
-  set_background("#aa00ff")
+  set_background("skyblue")
 
   # Draw the ground
   rect(0, 300, get_screen_width(), 200, "lightgreen")

@@ -20,7 +20,10 @@ while True:
   ellipse(ufox, 190, 40, 30, "lightblue")
 
   #Draw the sun
-  circle(get_screen_width(), 0, 100, "yellow")
+  circle(get_screen_width(), 0, 75, "yellow")
+
+  #Singular sun ray
+  line(get_screen_width() - 60, 60, get_screen_width() - 100, 100, "yellow", 3)
 
   # Have the ufo bounce on hitting a wall
   if ufox > get_screen_width() or ufox < 0:

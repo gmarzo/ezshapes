@@ -112,6 +112,23 @@ def triangle(p1x:int, p1y:int, p2x:int, p2y:int, p3x:int, p3y:int, color:str="gr
   """
   pygame.draw.polygon(display.__get_screen__(), __is_valid_color__(color), [(p1x, p1y),(p2x, p2y),(p3x, p3y)])
 
+def line(p1x:int, p1y:int, p2x:int, p2y:int, color:str="grey70", width:int=1)->None:
+  """
+  Draws a line from one point to another.
+
+  Parameters:
+    - p1x (int): The x coordinate of the line start
+    - p1y (int): The y coordinate of the line start
+    - p2x (int): The x coordinate of the line end
+    - p2y (int): The y coordinate of the line end
+    - color (str): The color of the line
+    - width (int): The width of the line
+  
+  Returns:
+    None
+  """
+  pygame.draw.line(display.__get_screen__(), __is_valid_color__(color), (p1x, p1y), (p2x, p2y), width)
+
 def get_screen_width()->int:
   """
   Returns the width of the screen given at setup.

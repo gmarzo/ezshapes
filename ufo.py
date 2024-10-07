@@ -1,4 +1,4 @@
-from helpers.functions import *
+from src.package_name.functions import *
 
 setup(700, 500)
 

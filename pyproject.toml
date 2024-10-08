@@ -1,6 +1,6 @@
 [project]
 name = "example_package_gmarzo"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Garrett Marzo", email="garrett.marzo@gmail.com" },
 ]
@@ -12,7 +12,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = ["pygame"]
+dependencies = ["pygame>=2.5.0"]
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"

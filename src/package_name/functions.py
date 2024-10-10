@@ -35,7 +35,7 @@ def update_screen()->None:
       pygame.quit()
   pygame.display.update()
 
-def set_background(color:str)->None:
+def set_background(color:str="grey70")->None:
   """
   Sets the color of the background if the given color is valid.
 

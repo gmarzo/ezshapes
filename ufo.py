@@ -10,7 +10,7 @@ while True:
   set_background("skyblue")
 
   # Draw the ground
-  rect(0, 300, get_screen_width(), 200, "lightgreen", 2, "darkgreen")
+  rect(0, 300, get_screen_width(), 200, "lightgreen", 20, "darkgreen")
 
   # Test Beam
   triangle(ufox, 200, ufox-30, 300, ufox+30, 300, "yellow", 2, "darkyellow")

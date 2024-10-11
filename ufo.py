@@ -1,4 +1,4 @@
-from src.package_name.functions import *
+from src.ezshapes.renderer import *
 
 setup(700, 500)
 

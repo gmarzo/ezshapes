@@ -1,4 +1,4 @@
-from ezshapes.renderer import *
+from src.ezshapes.renderer import *
 
 setup(500, 500)
 

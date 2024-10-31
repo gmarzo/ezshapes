@@ -10,10 +10,10 @@ while True:
   set_background("skyblue")
 
   # Draw the ground
-  rect(0, 300, get_screen_width(), 200, "lightgreen", 20, "darkgreen")
+  rect(0, 300, get_screen_width(), 200, "lightgreen")
 
   # Test Beam
-  triangle(ufox, 200, ufox-30, 300, ufox+30, 300, "yellow", 2, "darkyellow")
+  triangle(ufox, 200, ufox-30, 300, ufox+30, 300, "yellow")
 
   # Draw the UFO pieces
   ellipse(ufox, 200, 80, 40, "grey50")
@@ -23,7 +23,7 @@ while True:
   circle(get_screen_width(), 0, 75, "yellow", 1, "orange")
 
   #Singular sun ray
-  line(get_screen_width() - 60, 60, get_screen_width() - 100, 100, "yellow", 3)
+  line(get_screen_width() - 60, 60, get_screen_width() - 100, 100)
 
   # Have the ufo bounce on hitting a wall
   if ufox > get_screen_width() or ufox < 0:

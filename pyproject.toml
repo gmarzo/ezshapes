@@ -1,6 +1,6 @@
 [project]
 name = "ezshapes"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Garrett Marzo", email="garrett.marzo@gmail.com" },
 ]
@@ -15,8 +15,8 @@ classifiers = [
 dependencies = ["pygame >= 2.6.1"]
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
+Homepage = "https://github.com/gmarzo/ezshapes"
+Issues = "https://github.com/gmarzo/ezshapes/issues"
 
 [build-system]
 requires = ["hatchling", "pygame"]

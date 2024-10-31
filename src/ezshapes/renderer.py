@@ -4,7 +4,7 @@ from .colordict import THECOLORS
 
 pygame.init()
 
-def setup(width:int, height:int, name:str="Flying a UFO!")->None:
+def setup(width:int, height:int, name:str="Ezshapes Scene")->None:
   """
   Creates the pygame display with the given height and width.
   Can optionally include a name to change the window title.

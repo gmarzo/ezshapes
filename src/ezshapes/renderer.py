@@ -19,9 +19,11 @@ def setup(width:int, height:int, name:str="Ezshapes Scene")->None:
   """
   global display
   global clock
+  global active_keys
   
   display = Screen(height, width, name)
   clock = pygame.time.Clock()
+  active_keys = []
 
 def update_screen()->None:
   """
@@ -33,6 +35,7 @@ def update_screen()->None:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       pygame.quit()
+
   pygame.display.update()
 
 def set_background(color:str="grey70")->None:
@@ -166,6 +169,20 @@ def get_screen_height()->int:
     int: the height of the screen in pixels
   """
   return display.get_height()
+
+def key_pressed(key)->bool:
+  """
+  Returns whether a certain key the user presses is pressed
+
+  Parameters:
+    - key (str): The key to check
+  
+  Returns:
+    bool: Boolean for if the requested key is pressed down
+  """
+  return pygame.key.get_pressed()[pygame.key.key_code(key.lower())]
+
+
 
 def __is_valid_color__(color)->str:
   """

@@ -3,6 +3,7 @@ from src.ezshapes.renderer import *
 setup(700, 500)
 
 ufox = 350
+ufoy = 200
 speed = 5
 
 while True:
@@ -13,11 +14,11 @@ while True:
   rect(0, 300, get_screen_width(), 200, "lightgreen")
 
   # Test Beam
-  triangle(ufox, 200, ufox-30, 300, ufox+30, 300, "yellow")
+  triangle(ufox, ufoy, ufox-30, 300, ufox+30, 300, "yellow")
 
   # Draw the UFO pieces
-  ellipse(ufox, 200, 80, 40, "grey50")
-  ellipse(ufox, 190, 40, 30, "lightblue")
+  ellipse(ufox, ufoy, 80, 40, "grey50")
+  ellipse(ufox, ufoy-10, 40, 30, "lightblue")
 
   #Draw the sun
   circle(get_screen_width(), 0, 75, "yellow", 1, "orange")
@@ -28,6 +29,11 @@ while True:
   # Have the ufo bounce on hitting a wall
   if ufox > get_screen_width() or ufox < 0:
     speed *= -1
+  
+  if key_pressed("UP"):
+    ufoy -= 3
+  if key_pressed("down"):
+    ufoy += 3
   
   ufox += speed
 

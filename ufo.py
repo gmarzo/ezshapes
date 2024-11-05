@@ -1,4 +1,5 @@
 from src.ezshapes.renderer import *
+from src.ezshapes.picture import Picture
 
 setup(700, 500)
 
@@ -6,15 +7,17 @@ ufox = 350
 ufoy = 200
 speed = 5
 
+meme = Picture("nah-id-win.jpg")
+
 while True:
 
   set_background("skyblue")
 
   # Draw the ground
-  rect(0, 300, get_screen_width(), 200, "lightgreen")
+  rect(0, 300, get_screen_width(), get_screen_height()-200, "lightgreen")
 
   # Test Beam
-  triangle(ufox, ufoy, ufox-30, 300, ufox+30, 300, "yellow")
+  triangle(ufox, ufoy, ufox-30, get_screen_height()-200, ufox+30, get_screen_height()-200, "yellow")
 
   # Draw the UFO pieces
   ellipse(ufox, ufoy, 80, 40, "grey50")
@@ -31,9 +34,9 @@ while True:
     speed *= -1
   
   if key_pressed("UP"):
-    ufoy -= 3
+    ufoy -= 10
   if key_pressed("down"):
-    ufoy += 3
+    ufoy += 10
   
   ufox += speed
 

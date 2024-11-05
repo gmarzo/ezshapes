@@ -1,6 +1,7 @@
 import pygame, re, sys
 from .screen import Screen
 from .colordict import THECOLORS
+from .picture import Picture
 
 pygame.init()
 
@@ -38,7 +39,7 @@ def update_screen()->None:
 
   pygame.display.update()
 
-def set_background(color:str="grey70")->None:
+def set_background(bg:str|Picture="grey70")->None:
   """
   Sets the color of the background if the given color is valid.
 
@@ -48,7 +49,11 @@ def set_background(color:str="grey70")->None:
   Returns:
     None
   """
-  display.__get_screen__().fill(__is_valid_color__(color))
+  if type(bg) is Picture:
+    bg.set_scale(get_screen_width(), get_screen_height())
+    display.__get_screen__().blit(bg.surface, (0,0))
+  else:
+    display.__get_screen__().fill(__is_valid_color__(bg))
 
 def rect(left:int, top:int, width:int, height:int, color:str="grey70", bordersize:int=-1, bordercolor:str="black")->None:
   """
@@ -151,6 +156,9 @@ def line(p1x:int, p1y:int, p2x:int, p2y:int, color:str="grey70", width:int=1)->N
     None
   """
   pygame.draw.line(display.__get_screen__(), __is_valid_color__(color), (p1x, p1y), (p2x, p2y), width)
+
+def picture(img):
+  display.__get_screen__().blit(img.surface, (img.x, img.y))
 
 def get_screen_width()->int:
   """

@@ -1,13 +1,10 @@
 from src.ezshapes.renderer import *
-from src.ezshapes.picture import Picture
 
 setup(700, 500)
 
 ufox = 350
 ufoy = 200
 speed = 5
-
-meme = Picture("nah-id-win.jpg")
 
 while True:
 
@@ -24,10 +21,10 @@ while True:
   ellipse(ufox, ufoy-10, 40, 30, "lightblue")
 
   #Draw the sun
-  circle(get_screen_width(), 0, 75, "yellow", 1, "orange")
+  circle(get_screen_width(), 0, 75, "yellow")
 
   #Singular sun ray
-  line(get_screen_width() - 60, 60, get_screen_width() - 100, 100)
+  # line(get_screen_width() - 60, 60, get_screen_width() - 100, 100)
 
   # Have the ufo bounce on hitting a wall
   if ufox > get_screen_width() or ufox < 0:
@@ -37,7 +34,7 @@ while True:
     ufoy -= 10
   if key_pressed("down"):
     ufoy += 10
-  
+
   ufox += speed
 
   update_screen()

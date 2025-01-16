@@ -20,11 +20,9 @@ def setup(width:int, height:int, name:str="Ezshapes Scene")->None:
   """
   global display
   global clock
-  global active_keys
   
   display = Screen(height, width, name)
   clock = pygame.time.Clock()
-  active_keys = []
 
 def update_screen()->None:
   """
@@ -178,7 +176,7 @@ def get_screen_height()->int:
   """
   return display.get_height()
 
-def key_pressed(key)->bool:
+def key_pressed(key:str)->bool:
   """
   Returns whether a certain key the user presses is pressed
 

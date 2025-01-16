@@ -19,7 +19,7 @@ Making a scene is as simple as choosing the size (measured in pixels). Set up yo
 After setup everything through ezshapes is rendered on screen **per frame**. Each frame is made through placing shapes in one iteration of a loop then drawing to it by using `update_screen()`.
 
 ```python
-setup(SCREEN_HEIGHT, SCREEN_WIDTH, TITLE)
+setup(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE)
 
 while True:
 

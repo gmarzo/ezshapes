@@ -1,6 +1,6 @@
 [project]
 name = "ezshapes"
-version = "1.0.1"
+version = "1.0.2"
 authors = [
   { name="Garrett Marzo", email="garrett.marzo@gmail.com" },
 ]

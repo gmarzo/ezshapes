@@ -47,7 +47,19 @@ def set_background(color:str="grey70")->None:
   """
   display.__get_screen__().fill(__is_valid_color__(color))
 
-def rect(left:int, top:int, width:int, height:int, color:str="grey70", bordersize:int=-1, bordercolor:str="black")->None:
+def key_pressed(key:str)->bool:
+  """
+  Returns whether a certain key the user presses is pressed
+
+  Parameters:
+    - key (str): The key to check
+  
+  Returns:
+    bool: Boolean for if the requested key is pressed down
+  """
+  return pygame.key.get_pressed()[pygame.key.key_code(key.lower())]
+
+def rect(left:int, top:int, width:int, height:int, color:str="grey70")->None:
   """
   Draws a rectangle on screen, with the top-left corner at a
   given coordinate with the specified width and height.
@@ -58,18 +70,14 @@ def rect(left:int, top:int, width:int, height:int, color:str="grey70", bordersiz
     - width (int): The width of the rectangle, extending right from the top left corner.
     - height (int): The height of the rectangle, extending down from the top left corner.
     - color (str): The fill color of the rectangle.
-    - bordersize (int): Optional. Width of the border around the shape.
-    - bordercolor (str): Optional. Color of the border if there is one.
+    
   
   Returns:
     None
   """
   pygame.draw.rect(display.__get_screen__(), __is_valid_color__(color), pygame.Rect(left, top, width, height))
-  if bordersize > 0:
-    pygame.draw.rect(display.__get_screen__(), __is_valid_color__(bordercolor), pygame.Rect(left, top, width, height), width=bordersize)
 
-
-def ellipse(centerx:int, centery:int, width:int, height:int, color:str="grey70", bordersize:int=-1, bordercolor:str="black")->None:
+def ellipse(centerx:int, centery:int, width:int, height:int, color:str="grey70")->None:
   """
   Draws an ellipse on screen at the given coordinates and size.
 
@@ -79,17 +87,13 @@ def ellipse(centerx:int, centery:int, width:int, height:int, color:str="grey70",
     - width (int): The width of the ellipse.
     - height (int): The height of the ellipse.
     - color (str): The fill color of the ellipse.
-    - bordersize (int): Optional. Width of the border around the shape.
-    - bordercolor (str): Optional. Color of the border if there is one.
   
   Returns:
     None
   """
   pygame.draw.ellipse(display.__get_screen__(), __is_valid_color__(color), pygame.Rect(centerx-(width/2), centery-(height/2), width, height))
-  if bordersize > 0:
-      pygame.draw.ellipse(display.__get_screen__(), __is_valid_color__(bordercolor), pygame.Rect(centerx-(width/2), centery-(height/2), width, height), width=bordersize)
 
-def circle(centerx:int, centery:int, radius:int, color:str="grey70", bordersize:int=-1, bordercolor:str="black")->None:
+def circle(centerx:int, centery:int, radius:int, color:str="grey70")->None:
   """
   Draws a circle at the given coordinates.
 
@@ -98,18 +102,13 @@ def circle(centerx:int, centery:int, radius:int, color:str="grey70", bordersize:
     - centery: The y coordinate of the circle's center.
     - radius: The size of the circle.
     - color: The fill color of the circle.
-    - bordersize (int): Optional. Width of the border around the shape.
-    - bordercolor (str): Optional. Color of the border if there is one.
   
   Returns:
     None
   """
   pygame.draw.circle(display.__get_screen__(), __is_valid_color__(color), (centerx, centery), radius)
-  if bordersize > 0:
-    pygame.draw.circle(display.__get_screen__(), __is_valid_color__(bordercolor), (centerx, centery), radius, width=bordersize)
 
-
-def triangle(p1x:int, p1y:int, p2x:int, p2y:int, p3x:int, p3y:int, color:str="grey70", bordersize:int=-1, bordercolor:str="black")->None:
+def triangle(p1x:int, p1y:int, p2x:int, p2y:int, p3x:int, p3y:int, color:str="grey70")->None:
   """
   Draws a triangle between 3 given vertices.
 
@@ -128,9 +127,6 @@ def triangle(p1x:int, p1y:int, p2x:int, p2y:int, p3x:int, p3y:int, color:str="gr
     None 
   """
   pygame.draw.polygon(display.__get_screen__(), __is_valid_color__(color), [(p1x, p1y),(p2x, p2y),(p3x, p3y)])
-  if bordersize > 0:
-    # pygame.draw.polygon(display.__get_screen__(), __is_valid_color__(bordercolor), [(p1x, p1y),(p2x, p2y),(p3x, p3y)], width=bordersize)
-    pygame.draw.lines(display.__get_screen__(), __is_valid_color__(bordercolor), True, [(p1x, p1y),(p2x, p2y),(p3x, p3y)], width=bordersize)
 
 def line(p1x:int, p1y:int, p2x:int, p2y:int, color:str="grey70", width:int=1)->None:
   """

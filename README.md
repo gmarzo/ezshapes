@@ -41,7 +41,7 @@ All shapes accept a color, which can either be a hex digit string in the form of
 
 ## Functions
 
-> `setup(width, height, name="Flying a UFO!")`
+> `setup(width, height, name="Ezshapes Scene")`
 
 Creates the display surface for the scene with the specified width and height, can optionally include a name for the window.
 
@@ -99,9 +99,19 @@ Return the height of the current display, equal to the width given to the `setup
 | ------- | ---- | ------------------------------ |
 | height  | int  | Height of the screen in pixels |
 
----
+> `key_pressed(key)`
 
-Shapes
+Returns True or False on whether the given `key` is being held. Is not case sensitive, eg. "A" and "a" are treated as the same.
+
+| Argument | Type | Description      |
+| -------- | ---- | ---------------- |
+| key      | str  | The key to check |
+
+| Returns | Type | Description                           |
+| ------- | ---- | ------------------------------------- |
+| pressed | bool | Whether given key is detected as held |
+
+## Shapes
 
 > `rect(left, top, width, height, color)`
 

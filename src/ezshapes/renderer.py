@@ -10,19 +10,31 @@ def setup(width:int, height:int, name:str="Ezshapes Scene")->None:
   Creates the pygame display with the given height and width.
   Can optionally include a name to change the window title.
 
-  Parameters:
-    - width (int): The width of the screen in pixels
-    - height (int): The height of the screen in pixels
-    - name (str): The caption of the window
+  :param int width: Width of the desired window in pixels
+  :param int height: Height of the desired window in pixels
+  :param str name: (Optional) Display name for the window 
   
-  Returns:
-    None
+  :return None:
   """
   global display
   global clock
+  global fps
   
   display = Screen(height, width, name)
   clock = pygame.time.Clock()
+  fps = 24
+
+def set_fps(framerate:int) -> None:
+  """
+  Updates the framerate of the screen running.
+  Framerate is capped between 1 and 60.
+
+  :param int framerate: The desired framerate for the scene to run at.
+
+  :return None:
+  """
+  global fps
+  fps = framerate
 
 def update_screen()->None:
   """
@@ -30,7 +42,7 @@ def update_screen()->None:
 
   Should be called once per frame and after all objects have been drawn.
   """
-  clock.tick(24)
+  clock.tick(fps)
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       pygame.quit()
@@ -41,11 +53,9 @@ def set_background(bg:str|Picture="grey70")->None:
   """
   Sets the color of the background if the given color is valid.
 
-  Parameters:
-    - color (str): the color to change the background to
+  :param str|Picture bg: The color or picture to set the background to.
   
-  Returns:
-    None
+  :return None:
   """
   if type(bg) is Picture:
     bg.set_scale(get_screen_width(), get_screen_height())
@@ -187,8 +197,6 @@ def key_pressed(key:str)->bool:
     bool: Boolean for if the requested key is pressed down
   """
   return pygame.key.get_pressed()[pygame.key.key_code(key.lower())]
-
-
 
 def __is_valid_color__(color)->str:
   """

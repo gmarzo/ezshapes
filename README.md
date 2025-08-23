@@ -25,9 +25,9 @@ while True:
     """
     Your code here!
     """
-      set_background('skyblue')
+    set_background('skyblue')
 
-      update_screen()
+    update_screen()
 ```
 
 Any shapes can be placed within the main loop and before the `update_screen()` call, which will be rendered on screen in the order they are processed. This means that two shapes in the same place can **draw over** one another if they overlap.

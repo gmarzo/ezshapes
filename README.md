@@ -170,4 +170,5 @@ Draws a line on screen between two given points. A width less than 1 will result
 | p1y      | int  | y-coordinate for the first point  |
 | p2x      | int  | x-coordinate for the second point |
 | p2y      | int  | y-coordinate for the second point |
+| color    | str  | Color of the line                 |
 | width    | int  | width of the line                 |
